@@ -31,7 +31,7 @@ const signInButton = document.getElementById('sign-in-button');
 // Constants
 const PAYSTACK_PUBLIC_KEY = 'pk_live_b717641a72ca4d90c9a90dc8e97dbc6cf53e00b0'; // Replace with your Paystack test public key
 const GOOGLE_CLIENT_ID = '624711469515-9kemuffde76v4a6egjtiqopcj0i4r0cu.apps.googleusercontent.com'; // Replace with your Google Client ID
-const API_BASE_URL = 'https://your-project.onrender.com/api'; // Replace with your Render domain
+const API_BASE_URL = 'https://resulto.onrender.com/api';
 const GRADE_POINTS = {
     'A': 5.0, 'B+': 4.5, 'B': 4.0, 'C+': 3.5, 'C': 3.0, 'D': 2.0, 'E': 1.0, 'F': 0.0
 };

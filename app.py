@@ -25,7 +25,7 @@ CORS(app, resources={r"/api/*": {
     "origins": [
         "http://localhost:5000",
         "http://127.0.0.1:5000",
-        "https://your-project.onrender.com"  # Replace with your Render domain
+        "https://resulto.onrender.com"
     ],
     "methods": ["GET", "POST", "OPTIONS"],
     "allow_headers": ["Content-Type", "Authorization"]
