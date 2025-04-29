@@ -29,7 +29,7 @@ const historyList = document.getElementById('history-list');
 const signInButton = document.getElementById('sign-in-button');
 
 // Constants
-const PAYSTACK_PUBLIC_KEY = 'pk_test_your_paystack_public_key'; // Replace with your Paystack test public key
+const PAYSTACK_PUBLIC_KEY = 'pk_live_b717641a72ca4d90c9a90dc8e97dbc6cf53e00b0'; // Replace with your Paystack test public key
 const GOOGLE_CLIENT_ID = '624711469515-9kemuffde76v4a6egjtiqopcj0i4r0cu.apps.googleusercontent.com'; // Replace with your Google Client ID
 const API_BASE_URL = 'https://your-project.onrender.com/api'; // Replace with your Render domain
 const GRADE_POINTS = {
