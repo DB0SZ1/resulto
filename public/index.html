@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Result Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <h1>ResultPro Editor</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-switch">
+                    <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M12 20V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M22 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M19.778 4.222L17.949 6.051" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <path d="M6.051 17.949L4.222 19.778" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <path d="M19.778 19.778L17.949 17.949" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <path d="M6.051 6.051L4.222 4.222" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="intro animate__animated animate__fadeIn">
+                <h2>Transform Your Academic Results</h2>
+                <p>Upload a result screenshot, edit grades, and download as image or PDF. <span
+                        class="premium-text">Premium version removes watermarks.</span></p>
+                <button id="sign-in-button" class="button secondary">Sign in with Google</button>
+            </section>
+
+            <div class="disclaimer">
+                <div class="icon">ⓘ</div>
+                <p>For educational demonstration purposes only. Not intended for fraudulent use.</p>
+            </div>
+
+            <section class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-area" id="upload-area">
+                        <svg class="upload-icon" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M17 8L12 3L7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <h3>Drag & Drop or Click to Upload</h3>
+                        <p>Supported formats: JPG, PNG, PDF</p>
+                        <input type="file" id="upload" accept="image/*" class="upload-input">
+                    </div>
+                </div>
+                <div class="processing-indicator" id="processing-indicator">
+                    <div class="spinner"></div>
+                    <p>Processing your image with OCR...</p>
+                </div>
+            </section>
+
+            <section class="preview-section" id="preview-section">
+                <div class="preview-container">
+                    <h3>Original Result</h3>
+                    <div id="preview" class="preview-box"></div>
+                </div>
+            </section>
+
+            <section class="editor-section" id="editor-section">
+                <div class="card grades-editor">
+                    <h3>Edit Your Grades</h3>
+                    <p>Change grades as needed below</p>
+                    <div class="student-info">
+                        <div class="form-group">
+                            <label for="student-name">Student Name</label>
+                            <input type="text" id="student-name" placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-number">Registration Number</label>
+                            <input type="text" id="reg-number" placeholder="REG12345">
+                        </div>
+                    </div>
+                    <table id="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Title</th>
+                                <th>Units</th>
+                                <th>Grade</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="grades-body"></tbody>
+                    </table>
+                    <div class="table-actions">
+                        <button id="add-course" class="button secondary">Add Course</button>
+                    </div>
+                    <div class="summary-info">
+                        <div class="summary-item">
+                            <span>Total Credits:</span>
+                            <span id="total-credits">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>CGPA:</span>
+                            <span id="cgpa">0.00</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button id="generate" class="button primary">Generate Free Version</button>
+                        <button id="upgrade-button" class="button premium">
+                            <span>Get Premium Version</span>
+                            <small>₦1,500 Only</small>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="history-section" id="history-section" style="display: none;">
+                <div class="card">
+                    <h3>Your Result History</h3>
+                    <div id="history-list"></div>
+                </div>
+            </section>
+
+            <div id="result-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">×</span>
+                    <h3>Your Modified Result</h3>
+                    <div class="result-preview">
+                        <img id="result-image" src="" alt="Generated Result">
+                    </div>
+                    <div class="download-options">
+                        <button id="download-image" class="button secondary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Download as Image
+                        </button>
+                        <button id="download-pdf" class="button secondary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Download as PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="payment-modal" class="modal">
+                <div class="modal-content payment-content">
+                    <span class="close-payment-button">×</span>
+                    <h3>Upgrade to Premium</h3>
+                    <div class="payment-details">
+                        <div class="feature-list">
+                            <h4>Premium Features</h4>
+                            <ul>
+                                <li>Watermark-free results</li>
+                                <li>Higher resolution output</li>
+                                <li>Advanced customization options</li>
+                                <li>Up to 10 downloads per purchase</li>
+                            </ul>
+                        </div>
+                        <div class="payment-form">
+                            <div class="price-tag">₦1,500</div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="your@email.com" required>
+                            </div>
+                            <button id="pay-button" class="button premium">Pay Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 ResultPro Editor. For educational purposes only.</p>
+        </footer>
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.0.0/dist/tesseract.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- App Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

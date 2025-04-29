@@ -1,0 +1,11 @@
+flask==2.3.3
+flask-cors==4.0.0
+pymongo==4.5.0
+pillow==10.1.0
+pytesseract==0.3.10
+cloudinary==1.36.0
+python-dotenv==1.0.0
+requests==2.31.0
+pyjwt==2.8.0
+apscheduler==3.10.4
+gunicorn==21.2.0
